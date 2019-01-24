@@ -67,11 +67,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -82,18 +77,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 echo -e "\x1b[36m ______     __  __     ______     __  __     __      "
 echo -e "\x1b[32m/\x1b[36m\  __ \ \x1b[32m  /\x1b[36m\ \_\ \ \x1b[32m  /\x1b[36m\  __ \ \x1b[32m  /\x1b[36m\ \_\ \ \x1b[32m  /\x1b[36m\ \     "
 echo -e "\x1b[32m\ \x1b[36m\  __ \ \x1b[32m \ \x1b[36m\  __ \ \x1b[32m \ \x1b[36m\ \\\\\x1b[32m/\x1b[36m\ \ \x1b[32m \ \x1b[36m\____ \ \x1b[32m \ \x1b[36m\_\    "
@@ -103,3 +86,7 @@ echo -e ""
 
 source $HOME/.zsh_exports
 source $HOME/.zsh_aliases
+
+export PATH=/usr/local/cuda-9.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH

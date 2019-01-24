@@ -11,7 +11,7 @@ apps=(
 	zsh
 
     scrot
-
+    feh
 
     dconf-cli
 )
@@ -29,6 +29,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 rm -rf ~/.oh-my-zsh/themes
 git clone https://github.com/0i0/0i0.zsh-theme.git ~/.oh-my-zsh/themes
 
+
+echo "Seting yp dotfile dir"
+
 cd "$(dirname "${BASH_SOURCE}")"
 
 git init
@@ -40,7 +43,7 @@ git reset --hard origin/master
 
 git pull origin master
 
-echo "linking"
+echo "Linking.."
 
 # Symlink dotfiles
 for file in $(ls -A); do
@@ -52,4 +55,5 @@ if [ "$file" != ".git" ] && \
 fi
 done 
 
+# Gnome terminal theme
 bash -c  "$(wget -qO- https://git.io/vQgMr)"
