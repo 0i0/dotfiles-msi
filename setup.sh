@@ -36,7 +36,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 
 git init
 
-git remote add origin https://github.com/0i0/dotfiles.git
+git remote add origin git@github.com:0i0/dotfiles.git
 
 git fetch --all
 git reset --hard origin/master
