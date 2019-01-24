@@ -45,7 +45,9 @@ git pull origin master
 
 echo "Linking.."
 
+
 # Symlink dotfiles
+rm -rf $HOME/.config
 for file in $(ls -A); do
 if [ "$file" != ".git" ] && \
    [ "$file" != "setup.sh" ] && \
