@@ -12,8 +12,13 @@ apps=(
 
     scrot
     feh
-
+    fonts-powerline
+    
     dconf-cli
+
+    gnome-themes-standard
+    gtk2-engines-murrine
+    libgtk-3-dev
 )
 
 sudo apt install "${apps[@]}"
@@ -28,6 +33,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 #0i0 theme
 rm -rf ~/.oh-my-zsh/themes
 git clone https://github.com/0i0/0i0.zsh-theme.git ~/.oh-my-zsh/themes
+
+cd $HOME/src
+
+git clone https://github.com/0i0/arc-theme.git
+git clone https://github.com/0i0/arc-icon-theme.git
+
+cd arc-icon-theme
+./autogen.sh --prefix=/usr
+sudo make install
+
+cd ../arc-theme
+./autogen.sh --prefix=/usr
+sudo make install
 
 
 echo "Seting yp dotfile dir"
