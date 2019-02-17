@@ -9,13 +9,10 @@ apps=(
   tmux
   wget
   zsh
-  
   scrot 
   feh
   fonts-powerline
-
   dconf-cli
-
   gnome-themes-standard
   gtk2-engines-murrine
   libgtk-3-dev
