@@ -209,10 +209,7 @@ client.placeholder      #000000 #555555 #ffffff #000000   #000000
 
 client.background       #000000
 
-assign [class="^gnome-terminal"] 1
-assign [class="^- Chromium"] 2
-
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 gaps inner 10
 gaps outer 10
@@ -221,3 +218,12 @@ exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/curl24k.png
 
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/chromium-browser'
+
+exec --no-startup-id compton --config ~/.config/compton.conf
+
+exec --no-startup-id devilspie ~/.config/devilspie/*.ds
+
+exec numlockx on
+
+assign [class="^gnome-terminal"] 1
+assign [class="^- Chromium"] 2

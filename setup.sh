@@ -4,21 +4,21 @@
 sudo apt update
 
 apps=( 
-	git
-	screen
-	tmux
-	wget
-	zsh
+  git
+  screen
+  tmux
+  wget
+  zsh
 
-    scrot
-    feh
-    fonts-powerline
-    
-    dconf-cli
+  scrot #screenshots
+  feh #background
+  fonts-powerline #cmd line
 
-    gnome-themes-standard
-    gtk2-engines-murrine
-    libgtk-3-dev
+  dconf-cli
+
+  gnome-themes-standard
+  gtk2-engines-murrine
+  libgtk-3-dev
 )
 
 sudo apt install "${apps[@]}"
@@ -38,40 +38,48 @@ cd $HOME/src
 
 git clone https://github.com/0i0/arc-theme.git
 git clone https://github.com/0i0/arc-icon-theme.git
+git clone https://github.com/tryone144/compton.git
 
-cd arc-icon-theme
+# arc icons modified
+cd $HOME/src/arc-icon-theme
 ./autogen.sh --prefix=/usr
 sudo make install
 
-cd ../arc-theme
+# arc Dark modified
+cd $HOME/src/arc-theme
 ./autogen.sh --prefix=/usr
 sudo make install
 
+# compton with blur
+cd $HOME/src/compton
+sudo apt install libconfig-dev
+sudo apt install asciidoc
+make
+make docs
+make install
 
-echo "Seting yp dotfile dir"
+
+
+echo "Seting up dotfile dir"
 
 cd "$(dirname "${BASH_SOURCE}")"
 
 git init
-
 git remote add origin git@github.com:0i0/dotfiles.git
-
 git fetch --all
 git reset --hard origin/master
-
 git pull origin master
 
 echo "Linking.."
-
 
 # Symlink dotfiles
 rm -rf $HOME/.config
 for file in $(ls -A); do
 if [ "$file" != ".git" ] && \
-   [ "$file" != "setup.sh" ] && \
-   [ "$file" != "remote-setup.sh" ] && \
-   [ "$file" != "README.md" ]; then
-    ln -sf $PWD/$file $HOME/
+  [ "$file" != "setup.sh" ] && \
+  [ "$file" != "remote-setup.sh" ] && \
+  [ "$file" != "README.md" ]; then
+  ln -sf $PWD/$file $HOME/
 fi
 done 
 
