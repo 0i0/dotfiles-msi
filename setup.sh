@@ -9,10 +9,10 @@ apps=(
   tmux
   wget
   zsh
-
-  scrot #screenshots
-  feh #background
-  fonts-powerline #cmd line
+  
+  scrot 
+  feh
+  fonts-powerline
 
   dconf-cli
 
