@@ -3,4 +3,5 @@
 .config/*
 !.config/i3*
 !.config/gtk-3.0*
-!.config/compton.conf
+!.config/compton.conf!
+!.config/devilspie*

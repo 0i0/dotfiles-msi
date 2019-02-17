@@ -85,5 +85,3 @@ done
 
 # Gnome terminal theme
 echo "run: bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
-
-source zsh
