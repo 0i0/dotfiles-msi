@@ -36,4 +36,8 @@ alias sass='nocorrect sass'
 #smart git
 alias smartgit=/usr/share/smartgit/bin/smartgit.sh
 
-alias ec2-desc="aws ec2 describe-instances --query \"Reservations[*].Instances[*][Tags[?Key=='Name'].Value[],PublicIpAddress]\" --filters Name=instance-state-name,Values=running --output text | sed '\$!N;s/\n/\t/'"
+#alias ec2-desc="aws ec2 describe-instances --query \"Reservations[*].Instances[*][Tags[?Key=='Name'].Value[],PublicIpAddress]\" --filters Name=instance-state-name,Values=running --output text | sed '\$!N;s/\n/\t/'"
+
+alias ec2-desc="~/src/aws-py-toolkit/ec2-desc.py"
+
+alias cat=ccat
