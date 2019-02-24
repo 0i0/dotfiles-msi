@@ -28,6 +28,7 @@
 import sys
 import json
 import subprocess
+import getpass
 from signal import signal, SIGTERM, SIGUSR1, SIGTSTP, SIGCONT, SIGIO
 
 def get_gpu_text():
@@ -43,7 +44,7 @@ def get_cpu_text():
     return '{}° {}° {}° {}°'.format(temparr[0].split()[2][1:3],temparr[1].split()[2][1:3],temparr[2].split()[2][1:3],temparr[3].split()[2][1:3])
 
 def get_networkspeed():
-    return subprocess.Popen(['/home/lior/.config/i3/measure-netspeed.bash'], stdout=subprocess.PIPE).communicate()[0]
+    return subprocess.Popen(['/home/{}/.config/i3/measure-netspeed.bash'.format(getpass.getuser())], stdout=subprocess.PIPE).communicate()[0]
 
 def print_line(message):
     """ Non-buffered printing to stdout. """

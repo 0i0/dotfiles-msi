@@ -188,15 +188,15 @@ exec setxkbmap -layout us,il
 exec setxkbmap -option 'grp:win_space_toggle'
 
 # Sreen sound controls
-bindsym XF86AudioRaiseVolume exec /home/lior/.config/i3/volume.sh up
-bindsym XF86AudioLowerVolume exec /home/lior/.config/i3/volume.sh dn
+bindsym XF86AudioRaiseVolume exec /home/$(whoami)/.config/i3/volume.sh up
+bindsym XF86AudioLowerVolume exec /home/$(whoami)/.config/i3/volume.sh dn
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle ; exec notify-send -t 200 Volume Mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp  exec echo "1.5*$(cat /sys/class/backlight/intel_backlight/brightness)+1" | bc | perl -nl -MPOSIX -e 'print floor($_)' | tee /sys/class/backlight/intel_backlight/brightness # increase screen brightness
 bindsym XF86MonBrightnessDown exec echo "0.75*$(cat /sys/class/backlight/intel_backlight/brightness)" | bc | perl -nl -MPOSIX -e 'print floor($_)' | tee /sys/class/backlight/intel_backlight/brightness # decrease screen brightness
 
-bindsym $mod+y exec /home/lior/.config/i3/headphones.sh
+bindsym $mod+y exec /home/$(whoami)/.config/i3/headphones.sh
 
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
