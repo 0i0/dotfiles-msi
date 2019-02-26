@@ -61,6 +61,7 @@ ZSH_THEME="0i0"
 plugins=(
   git
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,3 +91,20 @@ source $HOME/.zsh_aliases
 export PATH=/usr/local/cuda-9.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=246'
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/'$(whoami)'/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/$(whoami)/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

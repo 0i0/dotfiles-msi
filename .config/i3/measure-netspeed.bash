@@ -14,7 +14,7 @@ path="/dev/shm/measure-net-speed"
 # If you have more (or less) than two adapters, simply adjust the script here
 # and in the next block. 
 # eth0="/sys/class/net/lo/statistics"
-wlan0="/sys/class/net/wlp61s0/statistics"
+wlan0="/sys/class/net/$(ls /sys/class/net | grep wlp)/statistics"
 # read eth0_rx < "${eth0}/rx_bytes"
 # read eth0_tx < "${eth0}/tx_bytes"
 read wlan0_rx < "${wlan0}/rx_bytes"
