@@ -43,3 +43,7 @@ alias ec2-desc="aws ec2 describe-instances --query \"Reservations[*].Instances[*
 alias cat=ccat
 
 alias colors="for x in {0..256}; do echo \"\$(tput sgr0)[\$x] \$(tput setaf \$x)0i0i0i0i0i0i0i0\"; done;"
+
+alias am=alsamixer
+
+alias ss0="sudo shutdown 0"
