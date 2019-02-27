@@ -92,5 +92,13 @@ if [[ $- == *i* ]]; then
     zsh -l
 fi
 
+# set zsh default
+cat >> $HOME/.bashrc << EndOfMessage 
+if [[ \$- == *i* ]]; then
+    export SHELL=zsh
+    zsh -l
+fi
+EndOfMessage
+
 # Gnome terminal theme
 echo "run: bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
