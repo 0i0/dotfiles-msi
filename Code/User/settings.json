@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Material Theme Darker",
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true
+    },
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "Dank Mono",
+    "editor.fontSize": 16,
+    "window.titleBarStyle": "native"
+}

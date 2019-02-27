@@ -5,3 +5,4 @@
 !.config/gtk-3.0*
 !.config/compton.conf!
 !.config/devilspie*
+!.config/Code/User/settings.json
