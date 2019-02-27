@@ -84,7 +84,13 @@ if [ "$file" != ".git" ] && \
   [ "$file" != "README.md" ]; then
   ln -sf $PWD/$file $HOME/
 fi
-done 
+done
+
+# Zsh shall be default
+if [[ $- == *i* ]]; then
+    export SHELL=zsh
+    zsh -l
+fi
 
 # Gnome terminal theme
 echo "run: bash -c  \"\$(wget -qO- https://git.io/vQgMr)\""
