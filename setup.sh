@@ -61,8 +61,6 @@ make
 make docs
 make install
 
-
-
 echo "Seting up dotfile dir"
 
 cd "$(dirname "${BASH_SOURCE}")"

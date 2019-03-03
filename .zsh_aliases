@@ -47,3 +47,6 @@ alias colors="for x in {0..256}; do echo \"\$(tput sgr0)[\$x] \$(tput setaf \$x)
 alias am=alsamixer
 
 alias ss0="sudo shutdown 0"
+
+alias spotify="spotify --force-device-scale-factor=1.95"
+

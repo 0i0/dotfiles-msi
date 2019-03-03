@@ -2,6 +2,7 @@
 
 .config/*
 !.config/i3*
+!.config/polybar*
 !.config/gtk-3.0*
 !.config/compton.conf!
 !.config/devilspie*
