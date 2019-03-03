@@ -9,5 +9,6 @@
     "window.zoomLevel": 0,
     "editor.fontFamily": "Dank Mono",
     "editor.fontSize": 16,
-    "window.titleBarStyle": "native"
+    "window.titleBarStyle": "native",
+    "editor.formatOnSave": true
 }

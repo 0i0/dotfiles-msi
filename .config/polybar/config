@@ -45,7 +45,7 @@ module-margin-left = 0
 module-margin-right = 2
 
 font-0 = Pragmata Pro Mono:size=22
-font-1 = Pragmata Pro Mono:size=22:weight:bold
+font-1 = Pragmata Pro Mono:size=22:bold
 font-2 = FontAwesome:size=30
 
 modules-left = i3
@@ -84,7 +84,7 @@ wrapping-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = 0;
-ws-icon-1 = 1; Zsh
+ws-icon-1 = 1; Sh
 ws-icon-2 = 2; Web
 ws-icon-3 = 3; Code
 ws-icon-4 = 4;4
@@ -123,7 +123,7 @@ label-urgent-padding = 2
 type = internal/date
 interval = 5
 
-date = " %m/%d/%Y"
+date = "%m/%d/%Y"
 time = %H:%M
 
 format-underline = ${colors.Red}
@@ -147,8 +147,11 @@ type = internal/network
 interface = wlp61s0
 interval = 3.0
 format-connected-underline = ${colors.Orange}
-label-connected = %downspeed% ⇩ %upspeed% ⇧  %essid% %local_ip%
+format-disconnected-underline = ${colors.Orange}
+label-connected = ⇩ %downspeed% ⇧ %upspeed%   %essid% %local_ip%
 format-connected = <label-connected>
+label-disconnected = not connected
+
 
 [module/spotify]
 type = custom/script
@@ -198,10 +201,8 @@ poll-interval = 5
 time-format = %H:%M
 format-charging = <label-charging>⚡
 format-discharging = <label-discharging>🔋
-label-charging = %percentage%%
-label-discharging = %percentage%%
 format-charging-underline = ${colors.Blue}
-
+format-discharging-underline = ${colors.Blue}
 
 [settings]
 screenchange-reload = true
