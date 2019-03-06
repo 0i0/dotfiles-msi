@@ -198,13 +198,15 @@ gaps outer 10
 exec_always --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/mountain.png
 
+assign [class="^gnome-terminal"] 1
+assign [class="^Chromium"] 2
+assign [class="Visual Studio Code"] 3
+
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/gnome-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/chromium-browser'
 exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/code'
 
-assign [class="^gnome-terminal"] 1
-assign [class="^- Chromium"] 2
-assign [class="Visual Studio Code"] 3
+
 
 exec --no-startup-id compton --config ~/.config/compton.conf
 
