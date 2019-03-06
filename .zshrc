@@ -93,18 +93,21 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=246'
-# >>> conda initialize >>>
+
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/'$(whoami)'/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(CONDA_REPORT_ERRORS=false $HOME'/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+    \eval "$__conda_setup"
 else
-    if [ -f "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
     else
-        export PATH="/home/$(whoami)/anaconda3/bin:$PATH"
+        \export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda init <<<
 
